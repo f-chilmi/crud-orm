@@ -42,3 +42,6 @@ Route::get('/data', function(){
 Route::get('/data_tables', function(){
     return view('adminLte.contents.dataTables');
 });
+
+// CRUD
+Route::get('/posts/create', 'postController@create');
