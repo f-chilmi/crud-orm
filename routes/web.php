@@ -11,6 +11,34 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/a', function () {
     return view('welcome');
+});
+
+Route::get('/coba', function(){
+    return "halo";
+});
+
+Route::get('/tes/{nama_depan}/dan/{nama_belakang}', 'PerkenalanController@hai');
+
+Route::get('/perkenalan/{nama_depan}/dan/{nama_belakang}', 'PerkenalanController@halo');
+
+Route::get('/', function(){
+    return view('halaman1');
+});
+
+Route::get('/form', 'PerkenalanController@form');
+
+Route::get('/welcome', 'PerkenalanController@welcome');
+
+Route::get('/master', function(){
+    return view('adminLte.master');
+});
+
+Route::get('/data', function(){
+    return view('adminLte.contents.data');
+});
+
+Route::get('/data_tables', function(){
+    return view('adminLte.contents.dataTables');
 });
