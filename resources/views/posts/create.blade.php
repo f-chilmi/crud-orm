@@ -8,12 +8,12 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form role="form">
+    <form role="form" action="/posts" method="POST">
     @csrf
         <div class="card-body">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter Title">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
             </div>
             <div class="form-group">
                 <label for="body">Body</label>
@@ -23,23 +23,20 @@
                 <label>Created at</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                    <input type="text" class="form-control" name="dateInput" placeholder="dd/mm/yyyy" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
                 </div>
-                  <!-- /.input group -->
-            </div>
-            <div class="form-group">
                 <label>Updated at</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                  </div>
-                  <!-- /.input group -->
+                    <input type="text" class="form-control" name="dateUpdate" placeholder="dd/mm/yyyy" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
                 </div>
+                  
             </div>
+            
         </div>
             
             

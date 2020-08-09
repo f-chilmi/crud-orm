@@ -45,3 +45,4 @@ Route::get('/data_tables', function(){
 
 // CRUD
 Route::get('/posts/create', 'postController@create');
+Route::post('/posts', 'postController@store');
