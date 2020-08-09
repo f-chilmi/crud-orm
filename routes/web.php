@@ -44,5 +44,7 @@ Route::get('/data_tables', function(){
 });
 
 // CRUD
+Route::get('/posts/create/profile', 'postController@createProfile');
+Route::post('/posts/profile', 'postController@storeProfile');
 Route::get('/posts/create', 'postController@create');
 Route::post('/posts', 'postController@store');

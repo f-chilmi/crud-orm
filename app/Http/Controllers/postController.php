@@ -11,16 +11,29 @@ class postController extends Controller
     public function create(){
         return view('posts.create');
     }
+    public function createProfile(){
+        return view('posts.createProfile');
+    }
 
-    public function store(Request $request){
+    public function storeProfile(Request $request){
         // dd($request->all());
-        $query = DB::table('posts')->insert([
-            // "judul" => $request["title"],
-            // "isi" => $request["body"],
-            "created_at" => $request["dateInput"],
-            "updated_at" => $request["dateUpdate"]
+        $query = DB::table('profile')->insert([
+            "nama_lengkap" => $request["fullName"],
+            "email" => $request["email"],
+            "foto" => $request["foto"],
             ]
         );
-        return redirect ('/posts/create');
+        return redirect ('/posts/create/profile');
+    }
+    public function store(Request $request){
+        dd($request->all());
+        // $query = DB::table('pertanyaan')->insert([
+        //     "judul" => $request["title"],
+        //     "isi" => $request["body"],
+        //     "tanggal_dibuat" => $request["dateInput"],
+        //     "tanggal_diperbaharui" => $request["dateUpdate"]
+        //     ]
+        // );
+        // return redirect ('/posts/create');
     }
 }

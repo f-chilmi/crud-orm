@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -34,3 +36,4 @@ class CreateLikeDislikePertanyaanTable extends Migration
         Schema::dropIfExists('like_dislike_pertanyaan');
     }
 }
+
