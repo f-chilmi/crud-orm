@@ -46,5 +46,11 @@ Route::get('/data_tables', function(){
 // CRUD
 Route::get('/posts/create/profile', 'postController@createProfile');
 Route::post('/posts/profile', 'postController@storeProfile');
+
 Route::get('/posts/create', 'postController@create');
 Route::post('/posts', 'postController@store');
+Route::get('/posts', 'postController@index');
+Route::get('/posts/{pertanyaanId}', 'postController@show');
+Route::get('/posts/{pertanyaanId}/edit', 'postController@edit');
+Route::put('posts/{pertanyaanId}', 'postController@update');
+Route::delete('posts/{pertanyaanId}', 'postController@destroy');
