@@ -58,11 +58,12 @@ class postController extends Controller
         return view('posts.edit', compact('pertanyaan'));
     }
     public function update($pertanyaanId, Request $request){
-        $query = DB::table('pertanyaan')
+        $affected = DB::table('pertanyaan')
                     -> where('id', $pertanyaanId)
                     -> update([
                         'judul' => $request['title'],
-                        'isi' => $request['body']
+                        'isi' => $request['body'],
+                        'tanggal_diperbaharui' => $request['dateUpdate']
                     ]);
         
         return redirect ('/posts')->with('success', 'Pertanyaan berhasil diperbaharui');
