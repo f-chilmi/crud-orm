@@ -52,5 +52,7 @@ Route::post('/posts', 'postController@store');
 Route::get('/posts', 'postController@index');
 Route::get('/posts/{pertanyaanId}', 'postController@show');
 Route::get('/posts/{pertanyaanId}/edit', 'postController@edit');
-Route::put('posts/{pertanyaanId}', 'postController@update');
-Route::delete('posts/{pertanyaanId}', 'postController@destroy');
+Route::put('/posts/{pertanyaanId}', 'postController@update');
+Route::delete('/posts/{pertanyaanId}', 'postController@destroy');
+
+// CRUD-ORM

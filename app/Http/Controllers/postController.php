@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pertanyaan;
 use DB;
 
 class postController extends Controller
@@ -32,13 +33,25 @@ class postController extends Controller
         //     'isi' => 'required',
         // ]);
 
-        $query = DB::table('pertanyaan')->insert([
+        // $query = DB::table('pertanyaan')->insert([
+        //     "judul" => $request["title"],
+        //     "isi" => $request["body"],
+        //     "tanggal_dibuat" => $request["dateInput"],
+        //     "tanggal_diperbaharui" => $request["dateUpdate"]
+        //     ]
+        // );
+
+        // $pertanyaan = new Pertanyaan;
+        // $pertanyaan -> judul = $request["title"];
+        // $pertanyaan -> isi = $request["body"];
+        // $pertanyaan -> save();
+
+        $pertanyaan = Pertanyaan::create([
             "judul" => $request["title"],
-            "isi" => $request["body"],
-            "tanggal_dibuat" => $request["dateInput"],
-            "tanggal_diperbaharui" => $request["dateUpdate"]
-            ]
-        );
+            "isi" => $request["body"]
+        ]);
+        // dd($pertanyaan);
+        
         return redirect ('/posts')->with('success', 'Pertanyaan berhasil ditambahkan');
     }
     public function index(){
